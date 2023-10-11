@@ -24,9 +24,9 @@ stages:
               test_xml_folder: example/test_results
               test_run_name: $(Build.DefinitionName) $(Build.Reason)
               test_run_id: $(Build.BuildId)
-              server_url: http://192.168.10.90:8083/cb
+              server_url: https://trial.codebeamer.com/
               cb_user: $(cb_user)
               cb_password: $(cb_password)
-              test_configuration_id: "2143"
-              test_case_tracker_id: "14156"
-              test_run_tracker_id: "14159"
+              test_configuration_id: "3967699"
+              test_case_tracker_id: "22922313"
+              test_run_tracker_id: "22922316"
