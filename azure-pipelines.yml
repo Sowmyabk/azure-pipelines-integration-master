@@ -13,6 +13,8 @@ stages:
   - stage: Test
     jobs:
       - job: codebeamer
+        timeoutInMinutes: 10
+        cancelTimeoutInMinutes: 2
         displayName: codebeamer upload
         steps:
           - script: |
