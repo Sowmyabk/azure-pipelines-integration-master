@@ -7,16 +7,16 @@ pr:
       - main
 pool:
   vmImage: ubuntu-latest
+  
 variables:
   - group: 
-
 
 stages:
   - stage: Test
     jobs:
       - job: codebeamer
-        timeoutInMinutes: 10 # how long to run the job before automatically cancelling
-        cancelTimeoutInMinutes: 2 # how much time to give 'run always even if cancelled tasks' before stopping them
+        timeoutInMinutes: 10 
+        cancelTimeoutInMinutes: 2 
         displayName: codebeamer upload
         steps:
           - script: |
