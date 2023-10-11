@@ -1,39 +1,34 @@
-# Starter pipeline
-
-# Start with a minimal pipeline that you can customize to build and deploy your code.
-# Add steps that build, run tests, deploy, and more:
-# https://aka.ms/yaml
-
+---
 trigger:
   - main
 pr:
   branches:
     include:
       - main
-
 pool:
-  vmImage: "ubuntu-latest"
-
+  vmImage: ubuntu-latest
 variables:
   - group: secrets
-
 stages:
   - stage: Test
     jobs:
       - job: codebeamer
-        displayName: "codebeamer upload"
+        displayName: codebeamer upload
         steps:
           - script: |
               echo "Empty job."
           - task: codeBeamer@1
             inputs:
-              test_xml_folder: 'example/test_results'
-              test_run_name: '$(Build.DefinitionName) $(Build.Reason)'
-              test_run_id: '$(Build.BuildId)'
-              server_url: 'http://192.168.10.90:8083/cb'
-              cb_user: '$(cb_user)'
-              cb_password: '$(cb_password)'
-              test_configuration_id: '2143'
-              test_case_tracker_id: '14156'
-              test_run_tracker_id: '14159'
-                    
+              test_xml_folder: example/test_results
+              test_run_name: $(Build.DefinitionName) $(Build.Reason)
+              test_run_id: $(Build.BuildId)
+              server_url: http://192.168.10.90:8083/cb
+              cb_user: $(cb_user)
+              cb_password: $(cb_password)
+              test_configuration_id: "2143"
+              test_case_tracker_id: "14156"
+              test_run_tracker_id: "14159"
+jobs:
+  - job: Test
+    timeoutInMinutes: 10
+    cancelTimeoutInMinutes: 2
