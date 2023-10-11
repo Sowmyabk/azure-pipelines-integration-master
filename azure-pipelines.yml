@@ -7,16 +7,12 @@ pr:
       - main
 pool:
   vmImage: ubuntu-latest
-  
 variables:
-  - group: 
-
+  - group: secrets
 stages:
   - stage: Test
     jobs:
       - job: codebeamer
-        timeoutInMinutes: 10 
-        cancelTimeoutInMinutes: 2 
         displayName: codebeamer upload
         steps:
           - script: |
@@ -32,5 +28,3 @@ stages:
               test_configuration_id: "2143"
               test_case_tracker_id: "14156"
               test_run_tracker_id: "14159"
-
-
