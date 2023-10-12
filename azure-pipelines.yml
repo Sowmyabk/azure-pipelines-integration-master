@@ -24,7 +24,7 @@ stages:
               test_xml_folder: example/test_results
               test_run_name: $(Build.DefinitionName) $(Build.Reason)
               test_run_id: $(Build.BuildId)
-              server_url: https://trial.codebeamer.com/
+              server_url: http://192.168.10.90:8083/cb/v3/swagger/editor.spr
               cb_user: $(cb_user)
               cb_password: $(cb_password)
               test_configuration_id: "3967699"
